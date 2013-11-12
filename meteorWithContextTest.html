@@ -1,0 +1,27 @@
+<head>
+  <title>meteorWithContextTest</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  
+
+  {{> testTemplate}}
+
+  {{#with someData}}
+    {{> testTemplate}}
+  {{/with}}
+</template>
+
+
+<template name="testTemplate">
+    {{firstHelper}}
+
+    The testTemplate<br>
+
+    {{secondHelper}}
+</template>
