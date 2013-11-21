@@ -1,16 +1,16 @@
 <head>
-  <title>meteorWithContextTest</title>
+  <title>meteorWithHelperTest</title>
 </head>
 
 <body>
-  {{> hello}}
+  {{> main}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  
+<template name="main">
 
-  {{> testTemplate}}
+  The With helper reruns when things change in the "testTemplate"<br>
+  Take a look in the console.<br>
+  <br>
 
   {{#with someData}}
     {{> testTemplate}}
@@ -19,9 +19,6 @@
 
 
 <template name="testTemplate">
-    {{firstHelper}}
-
-    The testTemplate<br>
-
-    {{secondHelper}}
+    {{this.someData}}<br>
+    <span>{{myTextReplacement}}</span>
 </template>
